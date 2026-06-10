@@ -1,3 +1,4 @@
+import { LocalTime } from "@/components/local-time";
 import type { Profile } from "@/lib/types";
 
 type ProfileCardProps = {
@@ -22,6 +23,9 @@ export function ProfileCard({ profile, variant = "full" }: ProfileCardProps) {
             {profile.name}
           </h2>
           <p className="truncate text-sm text-muted">{profile.role}</p>
+          <div className="mt-1">
+            <LocalTime timeZone={profile.timeZone} label="Lahore" />
+          </div>
         </div>
       </div>
 
