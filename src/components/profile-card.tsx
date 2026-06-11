@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LocalTime } from "@/components/local-time";
 import type { Profile } from "@/lib/types";
 
@@ -12,11 +13,20 @@ export function ProfileCard({ profile, variant = "full" }: ProfileCardProps) {
   return (
     <article className="rounded-2xl border border-line bg-paper-raised p-6">
       <div className="flex items-center gap-4">
-        <div
-          aria-hidden
-          className="grid size-14 shrink-0 place-items-center rounded-full bg-ink font-display text-2xl text-paper"
-        >
-          {profile.initials}
+        <div className="relative size-14 shrink-0 overflow-hidden rounded-full bg-ink">
+          <span
+            aria-hidden
+            className="absolute inset-0 grid place-items-center font-display text-2xl text-paper"
+          >
+            {profile.initials}
+          </span>
+          <Image
+            src={profile.avatar}
+            alt=""
+            width={112}
+            height={112}
+            className="relative size-full object-cover grayscale"
+          />
         </div>
         <div className="min-w-0">
           <h2 className="truncate text-lg font-semibold tracking-tight">

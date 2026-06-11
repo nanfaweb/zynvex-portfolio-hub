@@ -3,6 +3,7 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Afnan Asif",
   initials: "AA",
+  avatar: "https://picsum.photos/seed/afnan-avatar/160/160",
   role: "Full-stack developer · CS student",
   location: "Lahore, Pakistan",
   timeZone: "Asia/Karachi",

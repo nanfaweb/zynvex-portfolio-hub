@@ -7,6 +7,7 @@ export type SocialLink = {
 export type Profile = {
   name: string;
   initials: string;
+  avatar: string;
   role: string;
   location: string;
   timeZone: string;

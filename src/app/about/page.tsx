@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ProfileCard } from "@/components/profile-card";
 import { profile } from "@/data/profile";
 
@@ -18,6 +19,17 @@ export default function AboutPage() {
         </aside>
 
         <div className="flex flex-col gap-12 lg:col-span-8">
+          <figure className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line bg-paper-raised">
+            <Image
+              src="https://picsum.photos/seed/lahore-desk/1200/675"
+              alt="A workspace photo"
+              fill
+              priority
+              sizes="(min-width: 1024px) 66vw, 100vw"
+              className="object-cover"
+            />
+          </figure>
+
           <section aria-labelledby="about-heading">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
               About
