@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ProfileCard } from "@/components/profile-card";
+import { skills, timeline } from "@/data/about";
 import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
@@ -54,6 +55,45 @@ export default function AboutPage() {
                 feedback comes from a real URL.
               </p>
             </div>
+          </section>
+
+          <section aria-labelledby="skills-heading">
+            <h2 id="skills-heading" className="text-sm font-semibold uppercase tracking-[0.18em] text-muted">
+              Toolbox
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {skills.map((group) => (
+                <div key={group.title} className="rounded-2xl border border-line p-5">
+                  <h3 className="font-display text-2xl">{group.title}</h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-md bg-paper-raised px-2.5 py-1 font-mono text-xs text-ink-soft ring-1 ring-line"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="timeline-heading">
+            <h2 id="timeline-heading" className="text-sm font-semibold uppercase tracking-[0.18em] text-muted">
+              Timeline
+            </h2>
+            <ol className="mt-5 border-l border-line">
+              {timeline.map((entry) => (
+                <li key={entry.title} className="relative pb-8 pl-6 last:pb-0">
+                  <span className="absolute -left-[5px] top-2 size-2.5 rounded-full border-2 border-paper bg-accent" />
+                  <p className="font-mono text-xs text-muted">{entry.date}</p>
+                  <h3 className="mt-1 font-semibold">{entry.title}</h3>
+                  <p className="mt-1 max-w-prose text-ink-soft">{entry.detail}</p>
+                </li>
+              ))}
+            </ol>
           </section>
         </div>
       </div>

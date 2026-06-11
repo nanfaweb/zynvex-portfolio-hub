@@ -15,3 +15,14 @@ export type Profile = {
   focus: string[];
   socials: SocialLink[];
 };
+
+export type SkillGroup = {
+  title: string;
+  items: string[];
+};
+
+export type TimelineEntry = {
+  date: string;
+  title: string;
+  detail: string;
+};
