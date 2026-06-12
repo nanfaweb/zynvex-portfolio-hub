@@ -26,3 +26,20 @@ export type TimelineEntry = {
   title: string;
   detail: string;
 };
+
+export type ProjectStatus = "Shipped" | "In progress" | "Archived";
+
+export type Project = {
+  slug: string;
+  title: string;
+  tagline: string;
+  description: string;
+  year: number;
+  status: ProjectStatus;
+  tags: string[];
+  stack: string[];
+  highlights: string[];
+  repo: string;
+  live?: string;
+  featured?: boolean;
+};
