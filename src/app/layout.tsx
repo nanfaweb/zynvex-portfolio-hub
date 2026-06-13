@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,6 +23,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
+  openGraph: { type: "website", siteName: "Afnan Asif" },
+  twitter: { card: "summary_large_image" },
   title: {
     default: "Afnan Asif — Developer",
     template: "%s · Afnan Asif",
