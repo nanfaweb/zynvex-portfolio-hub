@@ -24,7 +24,7 @@ export function ProjectGrid({ projects, tags }: ProjectGridProps) {
       <div
         role="group"
         aria-label="Filter projects by tag"
-        className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:px-0"
+        className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:flex-wrap sm:px-0"
       >
         {filters.map((tag) => {
           const selected = tag === activeTag;

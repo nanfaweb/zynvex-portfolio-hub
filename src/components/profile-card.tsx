@@ -32,7 +32,7 @@ export function ProfileCard({ profile, variant = "full" }: ProfileCardProps) {
           <h2 className="truncate text-lg font-semibold tracking-tight">
             {profile.name}
           </h2>
-          <p className="truncate text-sm text-muted">{profile.role}</p>
+          <p className="text-sm leading-snug text-muted">{profile.role}</p>
           <div className="mt-1">
             <LocalTime timeZone={profile.timeZone} label="Lahore" />
           </div>

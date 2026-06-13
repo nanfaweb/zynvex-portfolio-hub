@@ -55,12 +55,16 @@ export function SiteHeader() {
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((value) => !value)}
         >
-          <span className="relative block h-3 w-4">
+          <span aria-hidden className="relative block size-4">
             <span
-              className={`absolute left-0 h-0.5 w-4 bg-ink transition-all ${open ? "top-1.5 rotate-45" : "top-0"}`}
+              className={`absolute left-0 top-1/2 h-0.5 w-4 -mt-px bg-ink transition-transform duration-200 ${
+                open ? "rotate-45" : "-translate-y-[4px]"
+              }`}
             />
             <span
-              className={`absolute left-0 h-0.5 w-4 bg-ink transition-all ${open ? "top-1.5 -rotate-45" : "top-2.5"}`}
+              className={`absolute left-0 top-1/2 h-0.5 w-4 -mt-px bg-ink transition-transform duration-200 ${
+                open ? "-rotate-45" : "translate-y-[4px]"
+              }`}
             />
           </span>
         </button>
